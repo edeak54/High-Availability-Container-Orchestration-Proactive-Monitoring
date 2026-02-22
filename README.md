@@ -53,6 +53,8 @@ While the underlying logic is complex, the interface is streamlined for automati
    ```bash
    kubectl apply -f infrastructure/
 
+>Note : The simulation assumes a local directory ~/legacy_server/data exists with files to be migrated.
+
 2. **Execute Verified Migration:**
    ```bash
    ansible-playbook automation/migration.yml
