@@ -52,3 +52,13 @@ While the underlying logic is complex, the interface is streamlined for automati
 1. **Deploy Infrastructure:**
    ```bash
    kubectl apply -f infrastructure/
+
+2. **Execute Verified Migration:**
+   ```bash
+   ansible-playbook automation/migration.yml
+
+3. **Validate:**
+   Check the Grafana dashboard for the storage spike and verify terminal output for ✅ MATCH status.
+
+
+
