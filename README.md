@@ -3,6 +3,8 @@
 ## 🚀 Project Overview
 This project demonstrates a production-grade transition from a **Legacy Server** environment to a **Modern Kubernetes Cluster**. It features a self-healing infrastructure, proactive monitoring, and an automated data migration pipeline with bit-for-bit integrity verification.
 
+> **Key Outcome:** Achieved real-time visibility into system metrics and demonstrated a reliable pathway for migrating legacy server data into a modern containerized environment.
+
 ## 🛠 Tech Stack
 * **Orchestration:** Kubernetes (K8s)
 * **Containerization:** Docker
