@@ -1,0 +1,23 @@
+---
+- name: Migration Automation
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Get active Flask Pod name
+      shell: kubectl get pods -l app=flask-app --field-selector=status.phase=Running -o jsonpath='{.items[0].metadata.name}'
+      register: flask_pod_name
+
+    - name: Fail if no pod found
+      fail:
+        msg: "No running Flask pod found. Is the app deployed?"
+      when: flask_pod_name.stdout == ""
+
+    - name: Run Migration Script
+      environment:
+        TARGET_POD: "{{ flask_pod_name.stdout }}"
+      command: python3 migrate.py
+      register: migration_output
+
+    - name: Display Results
+      debug:
+        var: migration_output.stdout_lines
